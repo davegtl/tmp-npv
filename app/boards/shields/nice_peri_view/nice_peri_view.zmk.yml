@@ -1,13 +1,13 @@
 file_format: "1"
-id: kuniboard
+id: nice_peri_view
 name: Kuniboard
 type: shield
 url: https://github.com/tobiasarndt/Kuniboard
-requires: 
+requires:
     - seeeduino_xiao_ble
 features:
     - keys
     - display
 siblings:
-    - kuniboard_left
-    - kuniboard_right
+    - nice_peri_view_left
+    - nice_peri_view_right

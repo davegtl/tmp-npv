@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "kuniboard.dtsi"
+#include "nice_peri_view.dtsi"
 
 // &kscan0 {
 //     gpios
@@ -32,7 +32,7 @@
 				<NRF_PSEL(SPIM_MOSI, 1, 15)>;
 			low-power-enable;
 		};
-	};	
+	};
 };
 nice_view_spi: &spi0 {
 	compatible = "nordic,nrf-spim";

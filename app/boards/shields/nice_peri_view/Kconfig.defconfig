@@ -1,7 +1,7 @@
 # Copyright (c) 2024 ZMK
 # SPDX-License-Identifier: MIT
 
-if SHIELD_KUNIBOARD_LEFT
+if SHIELD_NICE_PERI_VIEW_LEFT
 
 config ZMK_KEYBOARD_NAME
 	default "Kuniboard"
@@ -22,20 +22,20 @@ config LS0XX
 endif # ZMK_DISPLAY
 endif
 
-if SHIELD_KUNIBOARD_LEFT || SHIELD_KUNIBOARD_RIGHT
+if SHIELD_NICE_PERI_VIEW_LEFT || SHIELD_NICE_PERI_VIEW_RIGHT
 
 config ZMK_SPLIT
 	default y
 
 endif
 
-config KUNIBOARD_CUSTOM_DISPLAY
-    bool "use custom kuniboard display"
+config NICE_PERI_VIEW_CUSTOM_DISPLAY
+    bool "use custom nice_peri_view display"
 
-if KUNIBOARD_CUSTOM_DISPLAY
+if NICE_PERI_VIEW_CUSTOM_DISPLAY
 
-    config CONFIG_KUNIBOARD_SCREEN_INVERTED
-        bool "invert kuniboard display color"
+    config CONFIG_NICE_PERI_VIEW_SCREEN_INVERTED
+        bool "invert nice_peri_view display color"
 
     choice ZMK_DISPLAY_STATUS_SCREEN
         default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
@@ -48,9 +48,9 @@ if KUNIBOARD_CUSTOM_DISPLAY
         select LV_USE_LABEL
         select LV_USE_IMG
         select LV_USE_CANVAS
-        select LV_USE_ANIMIMG 
+        select LV_USE_ANIMIMG
         select LV_USE_ANIMATION
-        select LV_USE_LINE 
+        select LV_USE_LINE
         select LV_FONT_UNSCII_8
     	select LV_FONT_MONTSERRAT_16
     	select LV_FONT_MONTSERRAT_12
