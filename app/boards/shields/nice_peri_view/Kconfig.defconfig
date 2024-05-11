@@ -1,36 +1,21 @@
 # Copyright (c) 2024 ZMK
 # SPDX-License-Identifier: MIT
 
-if SHIELD_NICE_PERI_VIEW_LEFT
-
-config ZMK_KEYBOARD_NAME
-	default "Kuniboard"
-
-config ZMK_SPLIT_ROLE_CENTRAL
-	default y
-
-config ZMK_DISPLAY
-	select LV_FONT_MONTSERRAT_28
-
-if ZMK_DISPLAY
-
-config SPI
-	default y
-
-config LS0XX
-	default y
-endif # ZMK_DISPLAY
-endif
-
-if SHIELD_NICE_PERI_VIEW_LEFT || SHIELD_NICE_PERI_VIEW_RIGHT
-
-config ZMK_SPLIT
-	default y
-
-endif
-
 config NICE_PERI_VIEW_CUSTOM_DISPLAY
     bool "use custom nice_peri_view display"
+    default true
+
+if SHIELD_NICE_PERI_VIEW
+
+    config ZMK_DISPLAY
+        select LV_FONT_MONTSERRAT_28
+        select NICE_PERI_VIEW_CUSTOM_DISPLAY
+
+    choice ZMK_DISPLAY_STATUS_SCREEN
+        default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+    endchoice
+
+endif #SHIELD_NICE_PERI_VIEW
 
 if NICE_PERI_VIEW_CUSTOM_DISPLAY
 
@@ -76,4 +61,4 @@ if NICE_PERI_VIEW_CUSTOM_DISPLAY
         default LV_COLOR_DEPTH_1
     endchoice
 
-endif
+endif # NICE_PERI_VIEW_CUSTOM_DISPLAY

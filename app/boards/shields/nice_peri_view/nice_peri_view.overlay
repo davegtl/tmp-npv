@@ -4,53 +4,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "nice_peri_view.dtsi"
-
-// &kscan0 {
-//     gpios
-//         = <&xiao_d 1 (GPIO_ACTIVE_HIGH)>
-//         , <&xiao_d 2 (GPIO_ACTIVE_HIGH)>
-//         , <&xiao_d 3 (GPIO_ACTIVE_HIGH)>
-//         , <&xiao_d 4 (GPIO_ACTIVE_HIGH)>
-//         , <&xiao_d 5 (GPIO_ACTIVE_HIGH)>
-//         // = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-//         // , <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-//         ;
-// };
-
-
-&pinctrl {
-	spi0_default: spi0_default {
-		group1 {
-			psels = <NRF_PSEL(SPIM_SCK, 1, 14)>,
-				<NRF_PSEL(SPIM_MOSI, 1, 15)>;
-		};
-	};
-	spi0_sleep: spi0_sleep {
-		group1 {
-			psels = <NRF_PSEL(SPIM_SCK, 1, 14)>,
-				<NRF_PSEL(SPIM_MOSI, 1, 15)>;
-			low-power-enable;
-		};
-	};
-};
-nice_view_spi: &spi0 {
-	compatible = "nordic,nrf-spim";
-	pinctrl-0 = <&spi0_default>;
-	pinctrl-1 = <&spi0_sleep>;
-	pinctrl-names = "default", "sleep";
-	cs-gpios = <&xiao_d 8 GPIO_ACTIVE_HIGH>;
-};
-display_spi: &spi0 {
-	compatible = "nordic,nrf-spim";
-	pinctrl-0 = <&spi0_default>;
-	pinctrl-1 = <&spi0_sleep>;
-	pinctrl-names = "default", "sleep";
-	cs-gpios = <&xiao_d 8 GPIO_ACTIVE_HIGH>;
-};
-&display_spi {
+&nice_view_spi {
 	status = "okay";
-	sharp: ls0xx@0 {
+	nice_peri_view: ls0xx@0 {
 		compatible = "sharp,ls0xx";
 		label = "DISPLAY";
 		spi-max-frequency = <2000000>;
@@ -62,6 +18,6 @@ display_spi: &spi0 {
 
 / {
   chosen {
-    zephyr,display = &sharp;
+    zephyr,display = &nice_peri_view;
   };
 };

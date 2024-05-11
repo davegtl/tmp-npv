@@ -1,8 +1,5 @@
 # Copyright (c) 2024 ZMK
 # SPDX-License-Identifier: MIT
 
-config SHIELD_NICE_PERI_VIEW_LEFT
-	def_bool $(shields_list_contains,nice_peri_view_left)
-
-config SHIELD_NICE_PERI_VIEW_RIGHT
-	def_bool $(shields_list_contains,nice_peri_view_right)
+config SHIELD_NICE_PERI_VIEW
+	def_bool $(shields_list_contains,nice_peri_view)
