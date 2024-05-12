@@ -19,8 +19,15 @@ endif #SHIELD_NICE_PERI_VIEW
 
 if NICE_PERI_VIEW_CUSTOM_DISPLAY
 
-    config CONFIG_NICE_PERI_VIEW_SCREEN_INVERTED
+    config NICE_PERI_VIEW_CUSTOM_DISPLAY_ROTATE_CLOCKWISE
+        bool "rotate the display counterclockwise"
+        default n
+
+    config NICE_PERI_VIEW_SCREEN_INVERTED
         bool "invert nice_peri_view display color"
+
+    config ZMK_DISPLAY_BLANK_ON_IDLE
+         default n
 
     choice ZMK_DISPLAY_STATUS_SCREEN
         default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
