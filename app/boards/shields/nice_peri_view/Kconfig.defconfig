@@ -23,6 +23,10 @@ if NICE_PERI_VIEW_CUSTOM_DISPLAY
         bool "rotate the display counterclockwise"
         default n
 
+    config NICE_PERI_VIEW_RIGHT_SIDE_CENTRAL
+         bool "right side central"
+         default n
+
     config NICE_PERI_VIEW_SCREEN_INVERTED
         bool "invert nice_peri_view display color"
 
