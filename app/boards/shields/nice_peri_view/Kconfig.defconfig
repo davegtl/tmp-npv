@@ -13,6 +13,14 @@ config NICE_PERI_VIEW_RIGHT_SIDE_CENTRAL
         bool "right side central"
         default n
 
+config NICE_PERI_VIEW_SHOW_SLEEP_ART_ON_IDLE
+        bool "whether the sleep art should be shown on idle"
+        default y
+
+config NICE_PERI_VIEW_SHOW_SLEEP_ART_ON_SLEEP
+        bool "whether the sleep art should be shown on idle"
+        default y
+
 if SHIELD_NICE_PERI_VIEW
 
     config ZMK_DISPLAY
