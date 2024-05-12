@@ -145,3 +145,19 @@ The important thing to note here is that you have to add the `/workspaces/zmk-co
 And `-DZMK_CONFIG` must include not just the path to the `zmk-config`, but also the sub-directory `zmk-config/config`.
 
 You can [learn more in the zmk dev documentation](https://zmk.dev/docs/development/build-flash#building-with-external-modules).
+
+## Configuration Options
+
+You can also adjust the following config options:
+
+```c
+# Rotate the display by 180 degrees
+CONFIG_NICE_PERI_VIEW_ROTATE_DISPLAY=n
+
+# If your central side is on the right, enable this option
+CONFIG_NICE_PERI_VIEW_RIGHT_SIDE_CENTRAL=n
+
+# Control when the sleep art should be shown
+CONFIG_NICE_PERI_VIEW_SHOW_SLEEP_ART_ON_IDLE=y
+CONFIG_NICE_PERI_VIEW_SHOW_SLEEP_ART_ON_SLEEP=y
+```
