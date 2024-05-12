@@ -5,6 +5,14 @@ config NICE_PERI_VIEW_CUSTOM_DISPLAY
     bool "use custom nice_peri_view display"
     default true
 
+config NICE_PERI_VIEW_ROTATE_DISPLAY
+    bool "rotate the display by 180 degrees"
+    default n
+
+config NICE_PERI_VIEW_RIGHT_SIDE_CENTRAL
+        bool "right side central"
+        default n
+
 if SHIELD_NICE_PERI_VIEW
 
     config ZMK_DISPLAY
@@ -18,14 +26,6 @@ if SHIELD_NICE_PERI_VIEW
 endif #SHIELD_NICE_PERI_VIEW
 
 if NICE_PERI_VIEW_CUSTOM_DISPLAY
-
-    config NICE_PERI_VIEW_CUSTOM_DISPLAY_ROTATE_CLOCKWISE
-        bool "rotate the display counterclockwise"
-        default n
-
-    config NICE_PERI_VIEW_RIGHT_SIDE_CENTRAL
-         bool "right side central"
-         default n
 
     config NICE_PERI_VIEW_SCREEN_INVERTED
         bool "invert nice_peri_view display color"
