@@ -67,15 +67,15 @@ static void draw_batteries_widget(struct zmk_widget_batteries_status *widget) {
 
     lv_canvas_fill_bg(widget->canvas, LVGL_BACKGROUND, LV_OPA_COVER);
     #if CONFIG_NICE_PERI_VIEW_RIGHT_SIDE_CENTRAL
-    lv_canvas_draw_text(widget->canvas, 35, 0, 33, &widget->central_label_dsc, widget->central_text);
+    lv_canvas_draw_text(widget->canvas, 30, 0, 33, &widget->central_label_dsc, widget->central_text);
     if (widget->connected) {
-        lv_canvas_draw_text(widget->canvas, 0, 0, 33, &widget->peripheral_label_dsc,
+        lv_canvas_draw_text(widget->canvas, 5, 0, 33, &widget->peripheral_label_dsc,
                             widget->peripheral_text);
     }
     #else
-    lv_canvas_draw_text(widget->canvas, 0, 0, 33, &widget->central_label_dsc, widget->central_text);
+    lv_canvas_draw_text(widget->canvas, 5, 0, 33, &widget->central_label_dsc, widget->central_text);
     if (widget->connected) {
-        lv_canvas_draw_text(widget->canvas, 35, 0, 33, &widget->peripheral_label_dsc,
+        lv_canvas_draw_text(widget->canvas, 30, 0, 33, &widget->peripheral_label_dsc,
                             widget->peripheral_text);
     }
     #endif
