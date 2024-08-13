@@ -50,16 +50,16 @@ lv_obj_t *zmk_display_status_screen() {
     lv_obj_align(zmk_widget_output_status_obj(&output_status_widget), LV_ALIGN_BOTTOM_RIGHT, 0, 0);
     lv_obj_align(zmk_widget_layer_status_obj(&layer_status_widget), LV_ALIGN_BOTTOM_LEFT, 0, 0);
     lv_obj_align(zmk_widget_connection_status_obj(&connection_status_widget), LV_ALIGN_BOTTOM_RIGHT,
-                 -22, 0);
-    lv_obj_align(zmk_widget_batteries_status_obj(&batteries_status_widget), LV_ALIGN_TOP_RIGHT, -53,
+                 -42, 0);
+    lv_obj_align(zmk_widget_batteries_status_obj(&batteries_status_widget), LV_ALIGN_TOP_RIGHT, -73,
                  0);
     lv_obj_align(zmk_widget_sleep_status_obj(&sleep_status_widget), LV_ALIGN_BOTTOM_RIGHT, 0, 0);
 #else
     lv_obj_align(zmk_widget_output_status_obj(&output_status_widget), LV_ALIGN_BOTTOM_LEFT, 0, 0);
     lv_obj_align(zmk_widget_layer_status_obj(&layer_status_widget), LV_ALIGN_BOTTOM_RIGHT, 0, 0);
     lv_obj_align(zmk_widget_connection_status_obj(&connection_status_widget), LV_ALIGN_BOTTOM_LEFT,
-                 22, 0);
-    lv_obj_align(zmk_widget_batteries_status_obj(&batteries_status_widget), LV_ALIGN_TOP_LEFT, 53,
+                 42, 0);
+    lv_obj_align(zmk_widget_batteries_status_obj(&batteries_status_widget), LV_ALIGN_TOP_LEFT, 73,
                  0);
     lv_obj_align(zmk_widget_sleep_status_obj(&sleep_status_widget), LV_ALIGN_BOTTOM_LEFT, 0, 0);
 #endif
