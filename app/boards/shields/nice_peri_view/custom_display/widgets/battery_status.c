@@ -88,13 +88,13 @@ static void set_battery_symbol(struct zmk_widget_batteries_status *widget,
     if (state.source == 0) {
         strcpy(widget->central_text, "");
         char perc[5] = {};
-        snprintf(perc, sizeof(perc), "%3u%%", state.level);
+        snprintf(perc, sizeof(perc), "%3u", state.level);
         strcat(widget->central_text, perc);
     }
     if (state.source == 1) {
         strcpy(widget->peripheral_text, "");
         char perc[5] = {};
-        snprintf(perc, sizeof(perc), "%3u%%", state.level);
+        snprintf(perc, sizeof(perc), "%3u", state.level);
         strcat(widget->peripheral_text, perc);
     }
     draw_batteries_widget(widget);
